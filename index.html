@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DIPScope — MHHS interface and DIP message reference.">
+    <title>DIPScope | MHHS Interface & Message Reference</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loading-indicator" class="loading-overlay" aria-live="polite" aria-label="Loading interface data">
+        <div class="loading-card">
+            <span class="loading-spinner" aria-hidden="true"></span>
+            <div>
+                <p class="loading-title">Loading DIPScope</p>
+                <p class="loading-copy">Preparing interface reference data…</p>
+            </div>
+        </div>
+    </div>
+
+    <header class="app-header">
+        <div class="brand-lockup">
+            <div class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="16" cy="16" r="10.5" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="16" cy="16" r="4" stroke="currentColor" stroke-width="2"/>
+                    <path d="M16 2.5v4M29.5 16h-4M16 29.5v-4M2.5 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M21.7 10.3 18.8 13.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div>
+                <div class="brand-name">DIP<span>Scope</span></div>
+                <div class="brand-subtitle">MHHS Interface & Message Reference</div>
+            </div>
+        </div>
+
+        <div class="header-actions">
+            <div class="source-meta hidden md:flex" aria-label="Reference status">
+                <span class="source-dot" aria-hidden="true"></span>
+                <div>
+                    <strong id="sourceVersion">DIP technical reference</strong>
+                    <span id="sourceChecked">Reference status</span>
+                </div>
+            </div>
+            <button id="rejectionCodesBtn" class="header-tool-btn" type="button" title="Open rejection code lookup">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.25m0 3.25h.01M10.1 4.45 2.8 17.1A1.5 1.5 0 0 0 4.1 19.35h15.8a1.5 1.5 0 0 0 1.3-2.25L13.9 4.45a1.5 1.5 0 0 0-2.6 0Z"/>
+                </svg>
+                <span class="hidden sm:inline">Rejection codes</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="app-shell">
+        <aside class="sidebar" aria-label="Interface browser">
+            <div class="sidebar-heading-row">
+                <div>
+                    <p class="section-kicker">Reference library</p>
+                    <h1>Interfaces</h1>
+                </div>
+                <span id="interfaceCount" class="count-badge">46</span>
+            </div>
+
+            <div class="search-wrap">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <circle cx="11" cy="11" r="6.75"></circle>
+                    <path d="m16 16 4 4" stroke-linecap="round"></path>
+                </svg>
+                <input type="search" id="searchInput" autocomplete="off" placeholder="Search IF, event or data item…" aria-label="Search interfaces">
+                <div id="searchSuggestions" class="search-suggestions hidden"></div>
+            </div>
+
+            <div role="group" aria-label="Filter interfaces by supplier involvement" class="filter-segment">
+                <button class="filter-btn active-filter" data-filter="all" aria-pressed="true">All</button>
+                <button class="filter-btn" data-filter="supplier_send" aria-pressed="false">Send</button>
+                <button class="filter-btn" data-filter="supplier_receive" aria-pressed="false">Receive</button>
+                <button class="filter-btn" data-filter="none" aria-pressed="false">Other</button>
+            </div>
+
+            <div class="sidebar-legend" aria-hidden="true">
+                <span><i class="legend-dot send"></i>Send</span>
+                <span><i class="legend-dot receive"></i>Receive</span>
+                <span><i class="legend-dot both"></i>Both</span>
+            </div>
+
+            <div id="interfaceList" class="interface-list" role="region" aria-live="polite" aria-atomic="true"></div>
+        </aside>
+
+        <main id="detailsPanel" class="workspace" role="main" aria-live="polite">
+            <div id="rejectionCodesPanel" class="hidden workspace-view">
+                <div class="workspace-page-header">
+                    <div>
+                        <p class="section-kicker">Reference tool</p>
+                        <h2>Rejection codes</h2>
+                        <p>Search the locally catalogued MHHS rejection definitions.</p>
+                    </div>
+                    <button id="closeRejectionCodes" class="icon-btn" type="button" title="Close rejection code lookup" aria-label="Close rejection code lookup">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round"/></svg>
+                    </button>
+                </div>
+                <div class="lookup-search-wrap">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="6.75"></circle><path d="m16 16 4 4" stroke-linecap="round"></path></svg>
+                    <input type="search" id="rejectionCodeSearch" placeholder="Search code, description, reason or resolution…" aria-label="Search rejection codes">
+                </div>
+                <div id="rejectionCodesList" class="rejection-list"></div>
+            </div>
+
+            <div id="welcomeMessage" class="empty-state">
+                <div class="empty-illustration" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor">
+                        <circle cx="29" cy="29" r="17" stroke-width="2.2"/>
+                        <path d="m41.5 41.5 11 11" stroke-width="2.2" stroke-linecap="round"/>
+                        <path d="M29 18v22M18 29h22" stroke-width="1.35" opacity=".45"/>
+                        <circle cx="29" cy="29" r="6" stroke-width="1.6"/>
+                    </svg>
+                </div>
+                <p class="section-kicker">DIPScope</p>
+                <h2>Explore an MHHS interface</h2>
+                <p class="empty-copy">Choose an IF/PUB message from the library, or search by interface number, event code, block or data item.</p>
+                <div class="empty-hints">
+                    <span><kbd>IF-021</kbd> Interface ID</span>
+                    <span><kbd>MDRStop</kbd> Event code</span>
+                    <span><kbd>B900</kbd> Data block</span>
+                </div>
+            </div>
+
+            <div id="detailsContent" class="hidden workspace-view"></div>
+        </main>
+    </div>
+
+    <template id="interface-card-template">
+        <article class="interface-card" role="button" tabindex="0">
+            <div class="interface-card-topline">
+                <p class="interface-id" data-role="id"></p>
+                <span class="favorite-indicator" aria-hidden="true">★</span>
+            </div>
+            <p class="interface-name" data-role="name"></p>
+        </article>
+    </template>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
