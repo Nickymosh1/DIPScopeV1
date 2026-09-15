@@ -26,7 +26,7 @@ export function schemaFacts(schema, required) {
 export function technicalReferenceMarkup(item) {
   const definitions = item.technicalDefinition ? [item.technicalDefinition] : (item.technicalContexts || []);
   if (!definitions.length) return '<p>No confirmed technical schema mapping is recorded for this catalogue item.</p>';
-  return '<details><summary>Published technical definitions · Elexon 2.2.1</summary><p>Property presence depends on the containing block; inspect a message for its requirement.</p>' + definitions.map(d => '<p><code>' + escapeHtml(d.schemaRef) + (d.key ? ' · ' + escapeHtml(d.key) : '') + '</code></p>' + schemaFacts(d.schema)).join('') + '</details>';
+  return '<details><summary>Published technical definitions</summary><p>Property presence depends on the containing block; inspect a message for its requirement.</p>' + definitions.map(d => '<p><code>' + escapeHtml(d.schemaRef) + (d.key ? ' · ' + escapeHtml(d.key) : '') + '</code></p>' + schemaFacts(d.schema)).join('') + '</details>';
 }
 
 export function renderTechnicalInspector(node, items) {
