@@ -1,0 +1,585 @@
+{
+  "source": {
+    "version": "2.2.1",
+    "checkedDate": "2026-09-15",
+    "url": "https://dip-api-documentation.elexon.co.uk/api-specs/api-spec-2.2.1-resolved.json",
+    "sha256": "7d071b6ebba110ac6662fe235e75c4f3add1b33552347c5accabdd5968e87f9b"
+  },
+  "interfaces": [
+    {
+      "id": "IF-001/PUB-001",
+      "events": [
+        "InitialRegistration",
+        "ChangeOfSupplier"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-002/PUB-002",
+      "events": [
+        "GainMPANInfo"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-003/PUB-003",
+      "events": [
+        "MSDeAppRM",
+        "DSDeAppRM",
+        "ReverseMigNotification"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-004/PUB-004",
+      "events": [
+        "CommsHubInfo"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-005/PUB-005",
+      "events": [
+        "MeterInstall",
+        "MeterRemoval",
+        "MeterExchange",
+        "MeterUpdate",
+        "MeterHistoryUpdate"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-006/PUB-006",
+      "events": [
+        "MeterInstall",
+        "MeterRemoval",
+        "MeterExchange",
+        "MeterUpdate",
+        "MeterHistoryUpdate"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-007/PUB-007",
+      "events": [
+        "EnergisationStatusChange",
+        "EnergisationStatusFailure"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-008/PUB-008",
+      "events": [
+        "EnergisationStatusChange"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-009/PUB-009",
+      "events": [
+        "MPANDisconnection",
+        "MPANReconnection",
+        "CSSDeRegistration"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-013/PUB-013",
+      "events": [
+        "ActivePowerDefaulted"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-014/PUB-014",
+      "events": [
+        "ActivePowerRejected",
+        "ConsumptionOnDeEnergisedMPAN"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-015/PUB-015",
+      "events": [
+        "ConsumptionReplay"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-016/PUB-016",
+      "events": [
+        "ActivePower",
+        "ReactivePower",
+        "ActivePowerRejected",
+        "ActivePowerDefaulted",
+        "ConsumptionRequestRejected"
+      ],
+      "addedEvents": [
+        "ConsumptionRequestRejected"
+      ],
+      "catalogueOnlyEvents": [
+        "ReplayRequestRejected"
+      ]
+    },
+    {
+      "id": "IF-018/PUB-018",
+      "events": [
+        "AddressChg",
+        "GSPChg",
+        "DomPremInd",
+        "DUOSTariffIDChg",
+        "EnergyDirection",
+        "DCCEnrolment",
+        "MUMIndicator"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-019/PUB-019",
+      "events": [
+        "LinkedImportExportCreate",
+        "LinkedImportExportAdd",
+        "LinkedImportExportRemove",
+        "RelatedCreate",
+        "RelatedAdd",
+        "RelatedRemove"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-020/PUB-020",
+      "events": [
+        "LinkedImportExportCreate",
+        "LinkedImportExportAdd",
+        "LinkedImportExportRemove",
+        "RelatedCreate",
+        "RelatedAdd",
+        "RelatedRemove"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-021/PUB-021",
+      "events": [
+        "ActivePower",
+        "ReactivePower"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-022/PUB-022",
+      "events": [
+        "LSSPeriodData"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-023/PUB-023",
+      "events": [
+        "LSSTotalsData"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-024/PUB-024",
+      "events": [
+        "SN-Vacant",
+        "SN-NoComms",
+        "SN-RemoteEnabled",
+        "SN-RemoteDisabled",
+        "SN-SupplierAC",
+        "SN-OffPeakDec"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-025/PUB-025",
+      "events": [
+        "ConsentGranularity",
+        "IHDInfo",
+        "SMSO",
+        "SSCandProfileClass"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-026/PUB-026",
+      "events": [
+        "ConsentGranularity",
+        "IHDInfo",
+        "SMSO",
+        "SSCandProfileClass"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-027/PUB-027",
+      "events": [
+        "ConsumptionAmendment"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-028/PUB-028",
+      "events": [
+        "ConsumptionAmendment"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-031/PUB-031",
+      "events": [
+        "MSApp",
+        "DSApp"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-032/PUB-032",
+      "events": [
+        "MSAppInitialResp",
+        "DSAppInitialResp"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-033/PUB-033",
+      "events": [
+        "MSAppSPRequest",
+        "DSAppSPRequest"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-034/PUB-034",
+      "events": [
+        "MSAppSPResponse",
+        "DSAppSPResponse",
+        "SDS-MDRUpdate"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-035/PUB-035",
+      "events": [
+        "MSAppAccepted",
+        "MSAppRejected",
+        "MSAppLapsed",
+        "DSAppAccepted",
+        "DSAppRejected",
+        "DSAppLapsed",
+        "IMS-SendMTD",
+        "SDS-MDROutcome",
+        "DCC-MDROutcome"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-036/PUB-036",
+      "events": [
+        "MSAppActive",
+        "DSAppActive"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-037/PUB-037",
+      "events": [
+        "MSDeApp",
+        "DSDeApp",
+        "MSDeAppUpdate",
+        "DSDeAppUpdate"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-038/PUB-038",
+      "events": [
+        "DirectContractMSAdd",
+        "DirectContractDSAdd",
+        "DirectContractDSRemove",
+        "DirectContractMSRemove"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-039/PUB-039",
+      "events": [
+        "DirectContractMSAdd",
+        "DirectContractDSAdd",
+        "DirectContractDSRemove",
+        "DirectContractMSRemove"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-040/PUB-040",
+      "events": [
+        "AnnualConsumption"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-041/PUB-041",
+      "events": [
+        "ReadingRemote",
+        "ReadingRemv",
+        "ReadingInstl",
+        "ReadingEnergisationChg",
+        "ReadingCOR",
+        "ReadingOnSite",
+        "ReadingCOS",
+        "DSEstimate",
+        "SupplierAgreedCOS",
+        "ReadingOverride"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-043/PUB-043",
+      "events": [
+        "ConnectionTypeChange"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-044/PUB-044",
+      "events": [
+        "MarketSegmentChange"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-045/PUB-045",
+      "events": [
+        "InvalidMarketSegment",
+        "ConsentGranularityInvalid",
+        "NoMSAppointed",
+        "NoDSAppointed"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-047/PUB-047",
+      "events": [
+        "ISD"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-050/PUB-050",
+      "events": [
+        "MPANCreation",
+        "MPStatusChange",
+        "GreenDeal"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-051",
+      "events": [
+        "EESRefresh"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-061/PUB-061",
+      "events": [
+        "MDRStart"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-062/PUB-062",
+      "events": [
+        "MDRStartResponse"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-063/PUB-063",
+      "events": [
+        "MDRStop"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-064/PUB-064",
+      "events": [
+        "MDRConsumption"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    },
+    {
+      "id": "IF-065/PUB-065",
+      "events": [
+        "ReadingRemote",
+        "MDRInstantaneous",
+        "MDRTOU",
+        "MDRConsumption"
+      ],
+      "addedEvents": [],
+      "catalogueOnlyEvents": []
+    }
+  ],
+  "exampleUpdates": [
+    {
+      "id": "DI-090",
+      "before": "01",
+      "after": "A",
+      "reason": "Previous example 01 is outside the published one-character enum."
+    },
+    {
+      "id": "DI-128",
+      "before": "N345A",
+      "after": "999",
+      "reason": "Previous example N345A exceeds maxLength 3. Published numeric example 999 is represented as a string to match the declared type."
+    },
+    {
+      "id": "DI-082",
+      "before": "2020-02-08T00:30:00Z",
+      "after": "2020-02-08T00:30:00+00:00",
+      "reason": "Expanded UTC suffix to satisfy published DateTime length 25 without changing the instant."
+    },
+    {
+      "id": "DI-101",
+      "before": "2020-02-08T00:00:00Z",
+      "after": "2020-02-08T00:00:00+00:00",
+      "reason": "Expanded UTC suffix to satisfy published DateTime length 25 without changing the instant."
+    },
+    {
+      "id": "DI-992",
+      "before": "1.0.0",
+      "after": "011",
+      "reason": "Replaced historical 1.0.0 example with a published version. Actual permitted version remains interface-specific (including 001 for IF-051)."
+    }
+  ],
+  "unmappedFields": [
+    {
+      "path": "CustomBlock.B010.incomingMeteringServiceDIPID",
+      "schemaRef": "DT-006-DIPParticipantID"
+    },
+    {
+      "path": "CustomBlock.B010.incomingMeteringServiceMPID",
+      "schemaRef": "DT-027-MPID"
+    },
+    {
+      "path": "CustomBlock.B010.incomingMeteringServiceEffectiveFromDate",
+      "schemaRef": "DT-003-DateTime"
+    },
+    {
+      "path": "CustomBlock.B011.incomingDataServiceDIPID",
+      "schemaRef": "DT-006-DIPParticipantID"
+    },
+    {
+      "path": "CustomBlock.B011.incomingDataServiceMPID",
+      "schemaRef": "DT-027-MPID"
+    },
+    {
+      "path": "CustomBlock.B011.incomingDataServiceEffectiveFromDate",
+      "schemaRef": "DT-003-DateTime"
+    },
+    {
+      "path": "CustomBlock.B085.currentSupplierDIPID",
+      "schemaRef": "DT-006-DIPParticipantID"
+    },
+    {
+      "path": "CustomBlock.B085.currentSupplierMPID",
+      "schemaRef": "DT-027-MPID"
+    },
+    {
+      "path": "CustomBlock.B085.currentSupplierEffectiveFromDate",
+      "schemaRef": "DT-003-DateTime"
+    },
+    {
+      "path": "CustomBlock.B081.currentMeteringServiceDIPID",
+      "schemaRef": "DT-006N-DIPParticipantID"
+    },
+    {
+      "path": "CustomBlock.B081.currentMeteringServiceMPID",
+      "schemaRef": "DT-027N-MPID"
+    },
+    {
+      "path": "CustomBlock.B081.currentMeteringServiceEffectiveFromDate",
+      "schemaRef": "DT-003-DateTime"
+    },
+    {
+      "path": "CustomBlock.B082.currentDataServiceDIPID",
+      "schemaRef": "DT-006N-DIPParticipantID"
+    },
+    {
+      "path": "CustomBlock.B082.currentDataServiceMPID",
+      "schemaRef": "DT-027N-MPID"
+    },
+    {
+      "path": "CustomBlock.B082.currentDataServiceEffectiveFromDate",
+      "schemaRef": "DT-003-DateTime"
+    },
+    {
+      "path": "CustomBlock.B914List.existingMeter.meterID",
+      "schemaRef": "DT-029-MeterID"
+    },
+    {
+      "path": "CustomBlock.B914List.existingMeter.meterInstallationDate",
+      "schemaRef": "DT-003-DateTime"
+    },
+    {
+      "path": "CustomBlock.B914List.existingMeter.meterRemovalDate",
+      "schemaRef": "DT-003N-DateTime"
+    }
+  ],
+  "sourceCaveats": [
+    "The source eventCode enums contain square brackets; these are retained in field constraints and removed only from event selector labels.",
+    "Technical schema coverage does not verify business routing, effective dates or the historical catalogue descriptions."
+  ],
+  "summary": {
+    "interfaces": 46,
+    "eventVariants": 133,
+    "directItemDefinitions": 74,
+    "unmappedTechnicalFieldContexts": 18
+  }
+}
