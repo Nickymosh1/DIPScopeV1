@@ -1,0 +1,48 @@
+name: Check Elexon data
+on:
+  schedule:
+    - cron: '17 7 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: elexon-source-update
+  cancel-in-progress: false
+jobs:
+  check:
+    if: github.repository == 'Nickymosh1/DIPScopeV1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Test importer
+        run: node scripts/elexon/test.mjs
+      - name: Check published sources
+        id: check
+        run: node scripts/elexon/update.mjs
+      - name: Prepare review
+        if: steps.check.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          branch: codex/elexon-data-update
+          base: main
+          commit-message: Update Elexon reference data
+          title: Review Elexon reference data changes
+          body-path: .elexon-check/summary.md
+          add-paths: |
+            interfaceData.json
+            js/messageExamplesData.js
+            sources/elexon-current.json
+            sources/reconciliation-report.json
+            sources/elexon-upstream.json
+            sources/elexon-update-diff.json
+            sources/elexon-update-summary.md
