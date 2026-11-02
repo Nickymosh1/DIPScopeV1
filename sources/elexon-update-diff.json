@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-11-02T17:05:41.665Z",
+  "source": "https://dip-api-documentation.elexon.co.uk/api-specs/api-spec-2.2.1-resolved.json",
+  "version": "2.2.1",
+  "specificationChanged": false,
+  "githubChanged": true,
+  "schemas": {
+    "added": [],
+    "removed": [],
+    "changed": []
+  }
+}
